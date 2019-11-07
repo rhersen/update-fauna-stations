@@ -1,0 +1,28 @@
+{
+  "name": "update-fauna-stations",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "node --experimental-modules main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhersen/update-fauna-stations.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rhersen/update-fauna-stations/issues"
+  },
+  "homepage": "https://github.com/rhersen/update-fauna-stations#readme",
+  "dependencies": {
+    "faunadb": "^2.9.3",
+    "lodash": "^4.17.15",
+    "node-fetch": "^2.6.0",
+    "yenv": "^2.1.0"
+  }
+}
