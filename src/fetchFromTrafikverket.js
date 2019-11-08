@@ -1,4 +1,3 @@
-import _ from "lodash"
 import fetch from "node-fetch"
 import yenv from "yenv"
 const env = yenv()
@@ -26,12 +25,8 @@ export default async () => {
 
     const data = await response.json()
     const [body] = data.RESPONSE.RESULT
-    console.log("api  ", _.max(_.map(body.TrainStation, "ModifiedTime")))
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify(body)
-    }
+    return body.TrainStation
   } catch (e) {
     console.error(e)
   }

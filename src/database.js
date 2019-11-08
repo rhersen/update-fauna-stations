@@ -3,7 +3,18 @@ import faunadb from "faunadb"
 import yenv from "yenv"
 
 const env = yenv()
-const { Delete, Get, Index, Lambda, Map, Match, Paginate, Var } = faunadb.query
+const {
+  Create,
+  Collection,
+  Delete,
+  Get,
+  Index,
+  Lambda,
+  Map,
+  Match,
+  Paginate,
+  Var
+} = faunadb.query
 
 const faunaClient = new faunadb.Client({
   secret: env.FAUNA
@@ -14,8 +25,7 @@ export async function newest() {
     const ret = await faunaClient.query(
       Get(Match(Index("station_sort_by_modified_time")))
     )
-    console.log("fauna", _.get(ret, "data.ModifiedTime"))
-    return ret
+    return _.get(ret, "data.ModifiedTime")
   } catch (e) {
     console.error(e)
   }
@@ -31,6 +41,17 @@ export async function clear() {
     )
     console.log("fauna", "done")
     return ret
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+export async function create(stations) {
+  try {
+    stations.forEach(data => {
+      faunaClient.query(Create(Collection("TrainStation"), { data }))
+    })
+    console.log("fauna", "done")
   } catch (e) {
     console.error(e)
   }
