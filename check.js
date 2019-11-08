@@ -1,5 +1,5 @@
-import fetchFromDatabase from "./src/fetchFromDatabase.js"
+import * as database from "./src/database.js"
 import fetchFromTrafikverket from "./src/fetchFromTrafikverket.js"
 
-fetchFromDatabase()
+database.newest()
 fetchFromTrafikverket()
