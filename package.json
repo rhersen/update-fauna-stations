@@ -26,7 +26,7 @@
     "eslint": "^6.6.0",
     "eslint-plugin-prettier": "^3.1.1",
     "faunadb": "^2.9.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "node-fetch": "^2.6.0",
     "prettier": "^1.18.2",
     "yenv": "^2.1.0"
